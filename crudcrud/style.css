@@ -137,3 +137,27 @@ button:hover {
     background-color: #f75a68;
     color: white;
 }
+
+.cabecalho-lista {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #323238;
+    padding-bottom: 0.5rem;
+}
+
+.cabecalho-lista h2 {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.badge {
+    background-color: #323238;
+    color: #e1e1e6;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
