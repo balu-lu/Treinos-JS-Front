@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Clientes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Gestão de Clientes</h1>
+            <p class="instrucoes">Cadastre, gerencie e remova clientes via API.</p>
+        </header>
+
+        <section class="card-form">
+            <form id="form-cliente">
+                <div class="input-group">
+                    <input type="text" id="nome" placeholder="Nome completo do cliente" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="E-mail do cliente" required>
+                </div>
+                <button type="submit" id="btn-cadastrar">Cadastrar Cliente</button>
+            </form>
+        </section>
+
+        <section class="lista-container">
+            <h2>Clientes Cadastrados</h2>
+            <div id="lista-clientes" class="grid-clientes">
+                <p class="carregando">Carregando clientes...</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
