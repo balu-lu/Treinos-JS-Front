@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #121214;
+    color: #e1e1e6;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    color: #00b37e;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #c4c4cc;
+    border-bottom: 1px solid #323238;
+    padding-bottom: 0.5rem;
+}
+
+.instrucoes {
+    color: #a8a8b3;
+}
+
+.erro {
+    color: #f75a68;
+    text-align: center;
+}
+
+/* Formulário */
+.card-form {
+    background-color: #202024;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.input-group {
+    margin-bottom: 1rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #323238;
+    background-color: #121214;
+    color: #e1e1e6;
+    border-radius: 6px;
+    outline: none;
+    transition: border 0.2s;
+}
+
+input:focus {
+    border-color: #00b37e;
+}
+
+button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #00b37e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #008c62;
+}
+
+/* Listagem de Clientes*/
+.grid-clientes {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cliente-card {
+    background-color: #202024;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid #00b37e;
+}
+
+.cliente-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.cliente-info strong {
+    font-size: 1.1rem;
+    color: #e1e1e6;
+}
+
+.cliente-info span {
+    font-size: 0.9rem;
+    color: #8d8d99;
+}
+
+.btn-excluir {
+    width: auto;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: 1px solid #f75a68;
+    color: #f75a68;
+    font-size: 0.9rem;
+}
+
+.btn-excluir:hover {
+    background-color: #f75a68;
+    color: white;
+}
