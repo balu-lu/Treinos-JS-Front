@@ -16,23 +16,27 @@
         <section class="card-form">
             <form id="form-cliente">
                 <div class="input-group">
-                    <input type="text" id="nome" placeholder="Nome completo do cliente" required>
+                    <input type="text" id="nome" placeholder="Nome completo" required>
                 </div>
                 <div class="input-group">
-                    <input type="email" id="email" placeholder="E-mail do cliente" required>
+                    <input type="email" id="email" placeholder="E-mail" required>
                 </div>
                 <button type="submit" id="btn-cadastrar">Cadastrar Cliente</button>
             </form>
         </section>
 
         <section class="lista-container">
-            <h2>Clientes Cadastrados</h2>
+            <div class="cabecalho-lista">
+                <h2>Clientes Cadastrados</h2>
+                <span id="total-clientes" class="badge">Total: 0</span>
+            </div>
+            
             <div id="lista-clientes" class="grid-clientes">
                 <p class="carregando">Carregando clientes...</p>
             </div>
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>
