@@ -8,39 +8,42 @@
 </head>
 <body>
 
-    <header class="cabecalho">
-        <div class="logo">
-            <span class="destaque">Criativa</span>Web.
+    <header class="header">
+        <div class="header__logo">
+            <span class="highlight">Criativa</span>Web.
         </div>
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">&#9776;</label>
-        <nav class="navegacao">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#sobre">Sobre Nós</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#depoimentos">Depoimentos</a></li>
-                <li><a href="#contato">Contato</a></li>
+        
+        <input type="checkbox" id="menu-toggle" class="header__menu-toggle">
+        <label for="menu-toggle" class="header__menu-icon">&#9776;</label>
+        
+        <nav class="header__nav">
+            <ul class="header__list">
+                <li class="header__item"><a class="header__link" href="#home">Home</a></li>
+                <li class="header__item"><a class="header__link" href="#sobre">Sobre Nós</a></li>
+                <li class="header__item"><a class="header__link" href="#servicos">Serviços</a></li>
+                <li class="header__item"><a class="header__link" href="#depoimentos">Depoimentos</a></li>
+                <li class="header__item"><a class="header__link" href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="home" class="hero">
-            <div class="hero-conteudo">
-                <h1>Transformamos ideias em <span class="destaque">Experiências Digitais</span>.</h1>
-                <p>Design moderno, performance e inovação para elevar o nível da sua marca.</p>
-                <a href="#servicos" class="btn">Conheça nossos serviços</a>
+            <div class="hero__content">
+                <h1 class="hero__title">Transformamos ideias em <span class="highlight">Experiências Digitais</span>.</h1>
+                <p class="hero__description">Design moderno, performance e inovação para elevar o nível da sua marca.</p>
+                <a href="#servicos" class="btn btn--primary">Conheça nossos serviços</a>
             </div>
         </section>
 
-        <section id="sobre" class="sobre">
-            <div class="sobre-texto">
-                <h2>Quem Somos</h2>
-                <p>A Agência Criativa Web nasceu com o propósito de unir estética e funcionalidade. Nossos valores são baseados na inovação constante, design centrado no usuário e entrega de resultados reais para nossos clientes.</p>
+        <section id="sobre" class="about">
+            <div class="about__text">
+                <h2 class="section-title section-title--left">Quem Somos</h2>
+                <p class="about__description">A Agência Criativa Web nasceu com o propósito de unir estética e funcionalidade. Nossos valores são baseados na inovação constante, design centrado no usuário e entrega de resultados reais para nossos clientes.</p>
             </div>
-            <div class="sobre-imagem">
+            <div class="about__image-wrapper">
                 <img 
+                    class="about__img"
                     srcset="https://picsum.photos/400/300 400w, 
                             https://picsum.photos/800/600 800w" 
                     sizes="(max-width: 768px) 100vw, 50vw" 
@@ -49,55 +52,61 @@
             </div>
         </section>
 
-        <section id="servicos" class="servicos">
-            <h2>Nossos Serviços</h2>
-            <div class="grid-servicos">
-                <div class="card-servico">
-                    <h3>Design Gráfico</h3>
-                    <p>Identidade visual, branding e materiais corporativos que comunicam a essência da sua marca.</p>
+        <section id="servicos" class="services">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <div class="services__grid">
+                
+                <div class="service-card">
+                    <h3 class="service-card__title">Design Gráfico</h3>
+                    <p class="service-card__description">Identidade visual, branding e materiais corporativos que comunicam a essência da sua marca.</p>
                 </div>
-                <div class="card-servico">
-                    <h3>Desenvolvimento Web</h3>
-                    <p>Sites responsivos, rápidos e otimizados, utilizando as tecnologias mais modernas do mercado.</p>
+                
+                <div class="service-card">
+                    <h3 class="service-card__title">Desenvolvimento Web</h3>
+                    <p class="service-card__description">Sites responsivos, rápidos e otimizados, utilizando as tecnologias mais modernas do mercado.</p>
                 </div>
-                <div class="card-servico">
-                    <h3>UI/UX Design</h3>
-                    <p>Prototipagem e design de interfaces focadas na melhor experiência e usabilidade para o usuário.</p>
+                
+                <div class="service-card">
+                    <h3 class="service-card__title">UI/UX Design</h3>
+                    <p class="service-card__description">Prototipagem e design de interfaces focadas na melhor experiência e usabilidade para o usuário.</p>
                 </div>
             </div>
         </section>
 
-        <section id="depoimentos" class="depoimentos">
-            <h2>O que dizem sobre nós</h2>
-            <div class="lista-depoimentos">
-                <blockquote class="depoimento-card">
-                    <p>"O trabalho da Criativa Web mudou o patamar da nossa empresa. O site novo é incrível e superou as expectativas."</p>
-                    <cite>- Mariana Silva, CEO da TechInova</cite>
+        <section id="depoimentos" class="testimonials">
+            <h2 class="section-title">O que dizem sobre nós</h2>
+            <div class="testimonials__list">
+                
+                <blockquote class="testimonial-card">
+                    <p class="testimonial-card__text">"O trabalho da Criativa Web mudou o patamar da nossa empresa. O site novo é incrível e superou as expectativas."</p>
+                    <cite class="testimonial-card__author">- Mariana Silva, CEO da TechInova</cite>
                 </blockquote>
-                <blockquote class="depoimento-card">
-                    <p>"Profissionalismo e criatividade excepcionais. Entregaram a nossa identidade visual antes do prazo com uma qualidade absurda."</p>
-                    <cite>- Carlos Mendes, Diretor de Marketing</cite>
+                
+                <blockquote class="testimonial-card">
+                    <p class="testimonial-card__text">"Profissionalismo e criatividade excepcionais. Entregaram a nossa identidade visual antes do prazo com uma qualidade absurda."</p>
+                    <cite class="testimonial-card__author">- Carlos Mendes, Diretor de Marketing</cite>
                 </blockquote>
             </div>
         </section>
 
-        <section id="contato" class="contato">
-            <div class="contato-info">
-                <h2>Vamos Conversar?</h2>
-                <p>Email: ola@criativaweb.com</p>
-                <p>Telefone: (11) 99999-9999</p>
+        <section id="contato" class="contact">
+            <div class="contact__info">
+                <h2 class="section-title section-title--left">Vamos Conversar?</h2>
+                <p class="contact__detail">Email: ola@criativaweb.com</p>
+                <p class="contact__detail">Telefone: (11) 99999-9999</p>
             </div>
-            <form class="formulario">
-                <input type="text" placeholder="Seu Nome" required>
-                <input type="email" placeholder="Seu E-mail" required>
-                <textarea rows="5" placeholder="Sua Mensagem" required></textarea>
-                <button type="submit" class="btn">Enviar Mensagem</button>
+            
+            <form class="form">
+                <input type="text" class="form__input" placeholder="Seu Nome" required>
+                <input type="email" class="form__input" placeholder="Seu E-mail" required>
+                <textarea rows="5" class="form__textarea" placeholder="Sua Mensagem" required></textarea>
+                <button type="submit" class="btn btn--primary form__submit">Enviar Mensagem</button>
             </form>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Agência Criativa Web. Todos os direitos reservados.</p>
+    <footer class="footer">
+        <p class="footer__text">&copy; 2026 Agência Criativa Web. Todos os direitos reservados.</p>
     </footer>
 
 </body>

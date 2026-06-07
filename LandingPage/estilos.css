@@ -1,15 +1,18 @@
-/* Variáveis de Identidade Visual */
+/* =========================================
+   1. VARIÁVEIS E BASE
+========================================= */
 :root {
-    --cor-fundo: #09090b;
-    --cor-superficie: #18181b;
-    --cor-texto: #e4e4e7;
-    --cor-texto-mutado: #a1a1aa;
-    --cor-destaque: #3b82f6; /* Azul moderno */
-    --cor-destaque-hover: #2563eb;
-    --fonte-principal: system-ui, -apple-system, sans-serif;
+    --color-bg: #09090b;
+    --color-surface: #18181b;
+    --color-text-main: #e4e4e7;
+    --color-text-muted: #a1a1aa;
+    --color-primary: #3b82f6;
+    --color-primary-hover: #2563eb;
+    --color-border: #27272a;
+    
+    --font-base: system-ui, -apple-system, sans-serif;
 }
 
-/* Reset Global e Configuração de Unidades Relativas (rem) */
 * {
     margin: 0;
     padding: 0;
@@ -17,51 +20,66 @@
 }
 
 html {
-    /* Define 1rem = 10px para facilitar os cálculos de fonte */
-    font-size: 62.5%; 
+    font-size: 62.5%;
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: var(--fonte-principal);
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    font-size: 1.6rem; /* 16px */
+    font-family: var(--font-base);
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    font-size: 1.6rem;
     line-height: 1.6;
 }
 
-/* Títulos Globais */
-h2 {
+/* =========================================
+   2. CLASSES UTILITÁRIAS & COMPONENTES GERAIS
+========================================= */
+
+/* Destaque de cor */
+.highlight {
+    color: var(--color-primary);
+}
+
+/* Título de Seção Padrão */
+.section-title {
     font-size: 3.2rem;
     margin-bottom: 2rem;
     text-align: center;
 }
 
-.destaque {
-    color: var(--cor-destaque);
+/* Modificador do Título (Alinhamento) */
+.section-title--left {
+    text-align: left;
 }
 
+/* Componente: Botão */
 .btn {
     display: inline-block;
     padding: 1.2rem 2.4rem;
-    background-color: var(--cor-destaque);
-    color: #fff;
-    text-decoration: none;
     border-radius: 0.4rem;
     font-weight: bold;
     border: none;
     cursor: pointer;
+    text-decoration: none;
     transition: background-color 0.3s;
 }
 
-.btn:hover {
-    background-color: var(--cor-destaque-hover);
+.btn--primary {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.btn--primary:hover {
+    background-color: var(--color-primary-hover);
 }
 
 /* =========================================
-   CABEÇALHO & NAVEGAÇÃO (Flexbox)
+   3. BLOCOS ESPECÍFICOS (Padrão BEM)
 ========================================= */
-.cabecalho {
+
+/* --- BLOCO: Header --- */
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -70,45 +88,42 @@ h2 {
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid #27272a;
+    border-bottom: 1px solid var(--color-border);
 }
 
-.logo {
+.header__logo {
     font-size: 2.4rem;
     font-weight: bold;
 }
 
-/* Hack para Menu Hambúrguer sem JS */
-.menu-toggle {
+.header__menu-toggle {
     display: none;
 }
 
-.menu-icon {
+.header__menu-icon {
     font-size: 2.8rem;
     cursor: pointer;
-    display: none; /* Escondido no desktop */
+    display: none;
 }
 
-.navegacao ul {
+.header__list {
     display: flex;
     list-style: none;
     gap: 2rem;
 }
 
-.navegacao a {
-    color: var(--cor-texto);
+.header__link {
+    color: var(--color-text-main);
     text-decoration: none;
     font-size: 1.6rem;
     transition: color 0.3s;
 }
 
-.navegacao a:hover {
-    color: var(--cor-destaque);
+.header__link:hover {
+    color: var(--color-primary);
 }
 
-/* =========================================
-   HOME (Unidades Relativas vh)
-========================================= */
+/* --- BLOCO: Hero --- */
 .hero {
     min-height: 90vh;
     display: flex;
@@ -118,206 +133,200 @@ h2 {
     padding: 2rem 5vw;
 }
 
-.hero-conteudo h1 {
-    font-size: clamp(3.2rem, 5vw, 6.4rem); /* Texto responsivo moderno */
+.hero__title {
+    font-size: clamp(3.2rem, 5vw, 6.4rem);
     margin-bottom: 1.5rem;
     line-height: 1.1;
 }
 
-.hero-conteudo p {
+.hero__description {
     font-size: 2rem;
-    color: var(--cor-texto-mutado);
+    color: var(--color-text-muted);
     margin-bottom: 3rem;
     max-width: 60ch;
     margin-inline: auto;
 }
 
-/* =========================================
-   SOBRE NÓS (Flexbox)
-========================================= */
-.sobre {
+/* --- BLOCO: About --- */
+.about {
     display: flex;
     align-items: center;
     gap: 4rem;
     padding: 8rem 5vw;
-    background-color: var(--cor-superficie);
+    background-color: var(--color-surface);
 }
 
-.sobre-texto {
+.about__text, .about__image-wrapper {
     flex: 1;
 }
 
-.sobre-texto h2 {
-    text-align: left;
-}
-
-.sobre-imagem {
-    flex: 1;
-}
-
-/* Imagens Responsivas */
-.sobre-imagem img {
+.about__img {
     width: 100%;
     height: auto;
     border-radius: 0.8rem;
     object-fit: cover;
 }
 
-/* =========================================
-   SERVIÇOS (CSS Grid usando 'fr')
-========================================= */
-.servicos {
+/* --- BLOCO: Services --- */
+.services {
     padding: 8rem 5vw;
 }
 
-.grid-servicos {
+.services__grid {
     display: grid;
-    /* Auto-fit cria a responsividade automática do Grid sem precisar de Media Query */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2.4rem;
 }
 
-.card-servico {
-    background-color: var(--cor-superficie);
+/* --- BLOCO/COMPONENTE: Service Card --- */
+.service-card {
+    background-color: var(--color-surface);
     padding: 3.2rem;
     border-radius: 0.8rem;
-    border: 1px solid #27272a;
-    transition: transform 0.3s;
+    border: 1px solid var(--color-border);
+    transition: transform 0.3s, border-color 0.3s;
 }
 
-.card-servico:hover {
+.service-card:hover {
     transform: translateY(-5px);
-    border-color: var(--cor-destaque);
+    border-color: var(--color-primary);
 }
 
-.card-servico h3 {
+.service-card__title {
     margin-bottom: 1rem;
-    color: var(--cor-destaque);
+    color: var(--color-primary);
 }
 
-/* =========================================
-   DEPOIMENTOS (Flexbox)
-========================================= */
-.depoimentos {
+/* --- BLOCO: Testimonials --- */
+.testimonials {
     padding: 8rem 5vw;
-    background-color: var(--cor-superficie);
+    background-color: var(--color-surface);
 }
 
-.lista-depoimentos {
+.testimonials__list {
     display: flex;
     gap: 2.4rem;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.depoimento-card {
-    background-color: var(--cor-fundo);
+/* --- BLOCO/COMPONENTE: Testimonial Card --- */
+.testimonial-card {
+    background-color: var(--color-bg);
     padding: 3.2rem;
     border-radius: 0.8rem;
     flex: 1;
     min-width: 300px;
     max-width: 500px;
-    border-left: 4px solid var(--cor-destaque);
+    border-left: 4px solid var(--color-primary);
 }
 
-.depoimento-card p {
+.testimonial-card__text {
     font-style: italic;
     margin-bottom: 1.5rem;
 }
 
-.depoimento-card cite {
+.testimonial-card__author {
     font-weight: bold;
-    color: var(--cor-texto-mutado);
+    color: var(--color-text-muted);
 }
 
-/* =========================================
-   CONTATO (Flexbox)
-========================================= */
-.contato {
+/* --- BLOCO: Contact --- */
+.contact {
     display: flex;
     gap: 4rem;
     padding: 8rem 5vw;
 }
 
-.contato-info, .formulario {
+.contact__info, .form {
     flex: 1;
 }
 
-.contato-info h2 {
-    text-align: left;
+.contact__detail {
+    margin-bottom: 0.5rem;
 }
 
-.formulario {
+/* --- BLOCO/COMPONENTE: Form --- */
+.form {
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
 }
 
-.formulario input, .formulario textarea {
+.form__input, .form__textarea {
     width: 100%;
     padding: 1.6rem;
-    background-color: var(--cor-superficie);
-    border: 1px solid #27272a;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
     border-radius: 0.4rem;
-    color: var(--cor-texto);
+    color: var(--color-text-main);
     font-family: inherit;
     font-size: 1.6rem;
 }
 
-.formulario input:focus, .formulario textarea:focus {
+.form__input:focus, .form__textarea:focus {
     outline: none;
-    border-color: var(--cor-destaque);
+    border-color: var(--color-primary);
 }
 
-/* =========================================
-   RODAPÉ
-========================================= */
-footer {
+.form__submit {
+    width: 100%;
+}
+
+/* --- BLOCO: Footer --- */
+.footer {
     text-align: center;
     padding: 3.2rem;
-    background-color: var(--cor-superficie);
-    border-top: 1px solid #27272a;
-    color: var(--cor-texto-mutado);
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+}
+
+.footer__text {
+    color: var(--color-text-muted);
 }
 
 /* =========================================
-   MEDIA QUERIES (Responsividade)
+   4. RESPONSIVIDADE (Media Queries)
 ========================================= */
 @media (max-width: 768px) {
-    /* Ajustes Gerais */
-    h2 { font-size: 2.8rem; }
     
-    /* Menu Hambúrguer */
-    .menu-icon { display: block; }
+    .section-title {
+        font-size: 2.8rem;
+    }
     
-    .navegacao {
+    /* Header Mobile */
+    .header__menu-icon {
+        display: block;
+    }
+    
+    .header__nav {
         display: none;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
         background-color: rgba(24, 24, 27, 0.98);
-        border-bottom: 1px solid #27272a;
+        border-bottom: 1px solid var(--color-border);
     }
 
-    .navegacao ul {
+    .header__list {
         flex-direction: column;
         gap: 0;
         text-align: center;
     }
 
-    .navegacao a {
+    .header__link {
         display: block;
         padding: 2rem;
     }
 
-    /* O Hack do checkbox revela o menu ao ser clicado */
-    .menu-toggle:checked ~ .navegacao {
+    /* O Hack do checkbox BEM */
+    .header__menu-toggle:checked ~ .header__nav {
         display: block;
     }
 
-    /* Empilhando colunas */
-    .sobre, .contato {
+    /* Ajuste de Layouts Flex */
+    .about, .contact {
         flex-direction: column;
     }
 }
