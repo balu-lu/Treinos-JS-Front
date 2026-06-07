@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Estilo Livre</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-dark text-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top border-bottom border-secondary">
+        <div class="container">
+            <a class="navbar-brand text-uppercase fw-bold text-warning" href="#">
+                <i class="bi bi-scissors"></i> Estilo Livre
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Nós</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#depoimentos">Depoimentos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero-section d-flex align-items-center text-center">
+        <div class="container">
+            <h1 class="display-2 fw-bold mb-4">Sua melhor versão<br>começa <span class="text-warning">aqui.</span></h1>
+            <p class="lead mb-5 text-light opacity-75">Cortes modernos, barboterapia e um ambiente feito para você relaxar.</p>
+            <a href="#agendar" class="btn btn-warning btn-lg px-5 py-3 fw-bold rounded-0">AGENDAR HORÁRIO</a>
+        </div>
+    </header>
+
+    <section id="sobre" class="py-5 bg-dark">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="../estilo livre/img/interior.jpg" alt="Interior da Barbearia" class="img-fluid rounded shadow-lg border border-secondary">
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <h6 class="text-warning text-uppercase fw-bold tracking-wide">A Tradição Encontra o Moderno</h6>
+                    <h2 class="display-5 fw-bold mb-4">Mais que um corte,<br>um estilo de vida.</h2>
+                    <p class="text-secondary fs-5">A Barbearia Estilo Livre nasceu da paixão por resgatar a clássica barbearia masculina, somada às técnicas mais modernas do mercado.</p>
+                    <p class="text-secondary fs-5 mb-4">Nosso espaço foi pensado para oferecer não apenas um serviço de excelência, mas uma experiência de relaxamento, boa música e cerveja gelada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="py-5 bg-black">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Nossos <span class="text-warning">Serviços</span></h2>
+                <p class="text-secondary">Excelência em cada detalhe do seu visual.</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 bg-dark text-light border-secondary rounded-0 text-center p-4 service-card">
+                        <div class="card-body">
+                            <i class="bi bi-scissors fs-1 text-warning mb-3"></i>
+                            <h4 class="card-title fw-bold">Corte Clássico & Moderno</h4>
+                            <p class="card-text text-secondary">Fade, degradê, social ou na tesoura. Alinhado perfeitamente ao formato do seu rosto.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 bg-dark text-light border-secondary rounded-0 text-center p-4 service-card">
+                        <div class="card-body">
+                            <i class="bi bi-droplet fs-1 text-warning mb-3"></i>
+                            <h4 class="card-title fw-bold">Barboterapia</h4>
+                            <p class="card-text text-secondary">Toalha quente, navalha e produtos premium para uma pele hidratada e sem irritações.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 bg-dark text-light border-secondary rounded-0 text-center p-4 service-card">
+                        <div class="card-body">
+                            <i class="bi bi-stars fs-1 text-warning mb-3"></i>
+                            <h4 class="card-title fw-bold">Tratamento VIP</h4>
+                            <p class="card-text text-secondary">Combo completo: cabelo, barba, sobrancelha, hidratação capilar e massagem facial.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="py-5 bg-dark">
+        <div class="container py-5">
+            <h2 class="text-center display-5 fw-bold mb-5">O que dizem os <span class="text-warning">Clientes</span></h2>
+            
+            <div id="carouselDepoimentos" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner text-center">
+                    
+                    <div class="carousel-item active">
+                        <div class="w-75 mx-auto py-4">
+                            <i class="bi bi-quote fs-1 text-secondary opacity-50"></i>
+                            <p class="fs-4 fst-italic mb-4">"Melhor fade que já fiz. O ambiente é sensacional e o atendimento é de primeira. Recomendo de olhos fechados."</p>
+                            <h5 class="fw-bold text-warning">- Thiago M.</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <div class="w-75 mx-auto py-4">
+                            <i class="bi bi-quote fs-1 text-secondary opacity-50"></i>
+                            <p class="fs-4 fst-italic mb-4">"A barboterapia deles é um caminho sem volta. Sai de lá renovado. Parabéns à equipe da Estilo Livre!"</p>
+                            <h5 class="fw-bold text-warning">- Roberto C.</h5>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselDepoimentos" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselDepoimentos" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-5 bg-black">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center mb-5">
+                        <h2 class="display-5 fw-bold">Mande uma <span class="text-warning">Mensagem</span></h2>
+                        <p class="text-secondary">Dúvidas? Entre em contato preenchendo o formulário abaixo.</p>
+                    </div>
+                    
+                    <form class="bg-dark p-5 border border-secondary rounded-0">
+                        <div class="mb-3">
+                            <label for="nome" class="form-label text-warning fw-bold">Nome Completo</label>
+                            <input type="text" class="form-control bg-black text-light border-secondary rounded-0" id="nome" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label text-warning fw-bold">E-mail</label>
+                            <input type="email" class="form-control bg-black text-light border-secondary rounded-0" id="email" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="mensagem" class="form-label text-warning fw-bold">Sua Mensagem</label>
+                            <textarea class="form-control bg-black text-light border-secondary rounded-0" id="mensagem" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-warning w-100 py-3 fw-bold rounded-0 text-uppercase">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-center py-4 border-top border-secondary">
+        <div class="container">
+            <p class="text-secondary mb-0">&copy; 2026 Barbearia Estilo Livre. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

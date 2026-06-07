@@ -1,0 +1,30 @@
+/* Configuração da Imagem de Fundo do Banner Principal */
+.hero-section {
+    /* Altura da tela inteira (100 viewport height) menos o tamanho do menu */
+    min-height: 100vh;
+    
+    /* Imagem de fundo usando Unsplash como placeholder com uma camada escura por cima para dar leitura ao texto */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), 
+                url("../img/banner-bg-2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efeito Parallax simples */
+}
+
+/* Efeito Hover nos Cards de Serviço */
+.service-card {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: #ffc107 !important; /* Cor de warning do Bootstrap */
+}
+
+/* Ajustes de foco nos inputs do formulário para combinar com o tema Dark */
+.form-control:focus {
+    background-color: #000;
+    color: #fff;
+    border-color: #ffc107;
+    box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+}
