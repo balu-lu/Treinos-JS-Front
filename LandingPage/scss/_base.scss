@@ -1,0 +1,35 @@
+@use 'variaveis' as v;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: v.$font-base;
+    background-color: v.$color-bg;
+    color: v.$color-text-main;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+.highlight {
+    color: v.$color-primary;
+}
+
+.section-title {
+    font-size: 3.2rem;
+    margin-bottom: v.$spacing-base;
+    text-align: center;
+
+    // Aninhamento BEM para o Modificador
+    &--left {
+        text-align: left;
+    }
+}
