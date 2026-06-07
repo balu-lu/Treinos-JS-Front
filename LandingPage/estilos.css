@@ -1,0 +1,323 @@
+/* Variáveis de Identidade Visual */
+:root {
+    --cor-fundo: #09090b;
+    --cor-superficie: #18181b;
+    --cor-texto: #e4e4e7;
+    --cor-texto-mutado: #a1a1aa;
+    --cor-destaque: #3b82f6; /* Azul moderno */
+    --cor-destaque-hover: #2563eb;
+    --fonte-principal: system-ui, -apple-system, sans-serif;
+}
+
+/* Reset Global e Configuração de Unidades Relativas (rem) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* Define 1rem = 10px para facilitar os cálculos de fonte */
+    font-size: 62.5%; 
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-size: 1.6rem; /* 16px */
+    line-height: 1.6;
+}
+
+/* Títulos Globais */
+h2 {
+    font-size: 3.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.destaque {
+    color: var(--cor-destaque);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1.2rem 2.4rem;
+    background-color: var(--cor-destaque);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.4rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--cor-destaque-hover);
+}
+
+/* =========================================
+   CABEÇALHO & NAVEGAÇÃO (Flexbox)
+========================================= */
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5vw;
+    background-color: rgba(9, 9, 11, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #27272a;
+}
+
+.logo {
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+/* Hack para Menu Hambúrguer sem JS */
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    font-size: 2.8rem;
+    cursor: pointer;
+    display: none; /* Escondido no desktop */
+}
+
+.navegacao ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.navegacao a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-size: 1.6rem;
+    transition: color 0.3s;
+}
+
+.navegacao a:hover {
+    color: var(--cor-destaque);
+}
+
+/* =========================================
+   HOME (Unidades Relativas vh)
+========================================= */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 5vw;
+}
+
+.hero-conteudo h1 {
+    font-size: clamp(3.2rem, 5vw, 6.4rem); /* Texto responsivo moderno */
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.hero-conteudo p {
+    font-size: 2rem;
+    color: var(--cor-texto-mutado);
+    margin-bottom: 3rem;
+    max-width: 60ch;
+    margin-inline: auto;
+}
+
+/* =========================================
+   SOBRE NÓS (Flexbox)
+========================================= */
+.sobre {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 8rem 5vw;
+    background-color: var(--cor-superficie);
+}
+
+.sobre-texto {
+    flex: 1;
+}
+
+.sobre-texto h2 {
+    text-align: left;
+}
+
+.sobre-imagem {
+    flex: 1;
+}
+
+/* Imagens Responsivas */
+.sobre-imagem img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.8rem;
+    object-fit: cover;
+}
+
+/* =========================================
+   SERVIÇOS (CSS Grid usando 'fr')
+========================================= */
+.servicos {
+    padding: 8rem 5vw;
+}
+
+.grid-servicos {
+    display: grid;
+    /* Auto-fit cria a responsividade automática do Grid sem precisar de Media Query */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.4rem;
+}
+
+.card-servico {
+    background-color: var(--cor-superficie);
+    padding: 3.2rem;
+    border-radius: 0.8rem;
+    border: 1px solid #27272a;
+    transition: transform 0.3s;
+}
+
+.card-servico:hover {
+    transform: translateY(-5px);
+    border-color: var(--cor-destaque);
+}
+
+.card-servico h3 {
+    margin-bottom: 1rem;
+    color: var(--cor-destaque);
+}
+
+/* =========================================
+   DEPOIMENTOS (Flexbox)
+========================================= */
+.depoimentos {
+    padding: 8rem 5vw;
+    background-color: var(--cor-superficie);
+}
+
+.lista-depoimentos {
+    display: flex;
+    gap: 2.4rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.depoimento-card {
+    background-color: var(--cor-fundo);
+    padding: 3.2rem;
+    border-radius: 0.8rem;
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    border-left: 4px solid var(--cor-destaque);
+}
+
+.depoimento-card p {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.depoimento-card cite {
+    font-weight: bold;
+    color: var(--cor-texto-mutado);
+}
+
+/* =========================================
+   CONTATO (Flexbox)
+========================================= */
+.contato {
+    display: flex;
+    gap: 4rem;
+    padding: 8rem 5vw;
+}
+
+.contato-info, .formulario {
+    flex: 1;
+}
+
+.contato-info h2 {
+    text-align: left;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.formulario input, .formulario textarea {
+    width: 100%;
+    padding: 1.6rem;
+    background-color: var(--cor-superficie);
+    border: 1px solid #27272a;
+    border-radius: 0.4rem;
+    color: var(--cor-texto);
+    font-family: inherit;
+    font-size: 1.6rem;
+}
+
+.formulario input:focus, .formulario textarea:focus {
+    outline: none;
+    border-color: var(--cor-destaque);
+}
+
+/* =========================================
+   RODAPÉ
+========================================= */
+footer {
+    text-align: center;
+    padding: 3.2rem;
+    background-color: var(--cor-superficie);
+    border-top: 1px solid #27272a;
+    color: var(--cor-texto-mutado);
+}
+
+/* =========================================
+   MEDIA QUERIES (Responsividade)
+========================================= */
+@media (max-width: 768px) {
+    /* Ajustes Gerais */
+    h2 { font-size: 2.8rem; }
+    
+    /* Menu Hambúrguer */
+    .menu-icon { display: block; }
+    
+    .navegacao {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(24, 24, 27, 0.98);
+        border-bottom: 1px solid #27272a;
+    }
+
+    .navegacao ul {
+        flex-direction: column;
+        gap: 0;
+        text-align: center;
+    }
+
+    .navegacao a {
+        display: block;
+        padding: 2rem;
+    }
+
+    /* O Hack do checkbox revela o menu ao ser clicado */
+    .menu-toggle:checked ~ .navegacao {
+        display: block;
+    }
+
+    /* Empilhando colunas */
+    .sobre, .contato {
+        flex-direction: column;
+    }
+}
