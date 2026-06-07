@@ -1,0 +1,14 @@
+// Mixin 1: Atalho para Flexbox
+@mixin flex-center($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: center;
+}
+
+// Mixin 2: Atalho para Responsividade (Mobile)
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content; // O código que passarmos dentro do mixin será injetado aqui
+    }
+}
