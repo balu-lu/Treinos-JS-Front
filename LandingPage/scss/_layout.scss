@@ -1,0 +1,178 @@
+@use 'variaveis' as v;
+@use 'mixins' as m;
+
+// Header
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: v.$spacing-base 5vw;
+    background-color: rgba(9, 9, 11, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid v.$color-border;
+
+    &__logo {
+        font-size: 2.4rem;
+        font-weight: bold;
+    }
+
+    &__menu-toggle {
+        display: none;
+    }
+
+    &__menu-icon {
+        font-size: 2.8rem;
+        cursor: pointer;
+        display: none;
+
+        @include m.mobile {
+            display: block;
+        }
+    }
+
+    &__nav {
+        @include m.mobile {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: rgba(24, 24, 27, 0.98);
+            border-bottom: 1px solid v.$color-border;
+        }
+    }
+
+    &__list {
+        display: flex;
+        list-style: none;
+        gap: v.$spacing-base;
+
+        @include m.mobile {
+            flex-direction: column;
+            gap: 0;
+            text-align: center;
+        }
+    }
+
+    &__link {
+        color: v.$color-text-main;
+        text-decoration: none;
+        font-size: 1.6rem;
+        transition: color 0.3s;
+
+        &:hover {
+            color: v.$color-primary;
+        }
+
+        @include m.mobile {
+            display: block;
+            padding: v.$spacing-base;
+        }
+    }
+
+    // Hack do Checkbox para o Menu aninhado
+    &__menu-toggle:checked ~ &__nav {
+        @include m.mobile {
+            display: block;
+        }
+    }
+}
+
+// Hero
+.hero {
+    min-height: 90vh;
+    @include m.flex-center(column);
+    text-align: center;
+    padding: v.$spacing-base 5vw;
+
+    &__title {
+        font-size: clamp(3.2rem, 5vw, 6.4rem);
+        margin-bottom: calc(v.$spacing-base * 0.75);
+        line-height: 1.1;
+    }
+
+    &__description {
+        font-size: 2rem;
+        color: v.$color-text-muted;
+        margin-bottom: calc(v.$spacing-base * 1.5);
+        max-width: 60ch;
+        margin-inline: auto;
+    }
+}
+
+// Sobre Nós, Serviços, Depoimentos e Contato...
+.about {
+    display: flex;
+    align-items: center;
+    gap: calc(v.$spacing-base * 2);
+    padding: calc(v.$spacing-base * 4) 5vw;
+    background-color: v.$color-surface;
+
+    @include m.mobile {
+        flex-direction: column;
+    }
+
+    &__text, &__image-wrapper {
+        flex: 1;
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+        border-radius: 0.8rem;
+        object-fit: cover;
+    }
+}
+
+.services {
+    padding: calc(v.$spacing-base * 4) 5vw;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: calc(v.$spacing-base * 1.2);
+    }
+}
+
+.testimonials {
+    padding: calc(v.$spacing-base * 4) 5vw;
+    background-color: v.$color-surface;
+
+    &__list {
+        display: flex;
+        gap: calc(v.$spacing-base * 1.2);
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+.contact {
+    display: flex;
+    gap: calc(v.$spacing-base * 2);
+    padding: calc(v.$spacing-base * 4) 5vw;
+
+    @include m.mobile {
+        flex-direction: column;
+    }
+
+    &__info, .form {
+        flex: 1;
+    }
+
+    &__detail {
+        margin-bottom: calc(v.$spacing-base * 0.25);
+    }
+}
+
+.footer {
+    text-align: center;
+    padding: calc(v.$spacing-base * 1.6);
+    background-color: v.$color-surface;
+    border-top: 1px solid v.$color-border;
+
+    &__text {
+        color: v.$color-text-muted;
+    }
+}
